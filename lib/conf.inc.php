@@ -1,6 +1,6 @@
 <?php
-   $db['hostname'] = "iCatch";
+   $db['hostname'] = "localhost";
    $db['username'] = "icatch";
    $db['password'] = "icatch";
-   $db['database'] = "icatch";
+   $db['database'] = "iCatch";
 ?>
