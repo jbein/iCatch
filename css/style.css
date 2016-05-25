@@ -1,4 +1,5 @@
 body {
+  background: #132323 url("../images/background.jpg") no-repeat top;
   padding-top: 20px;
   padding-bottom: 20px;
 }
