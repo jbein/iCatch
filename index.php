@@ -4,7 +4,6 @@
    echo mysql_error();
 
    require_once("lib/conf.inc.php");
-   require_once("lib/mysql.class.php");
    require_once("lib/stuff.lib.php");
 
    require_once("html/head.html");
