@@ -17,6 +17,8 @@
    }
 
    $row = $res->fetch_row();
+   $img = "http://maps.googleapis.com/maps/api/staticmap?center=".$row[5].",".$row[6]."
+           &zoom=15&size=400x300&sensor=true&markers=color:red|label:C|".$row[5].",".$row[6];
 
    echo "<div class=\"modal-header panel-heading\">";
    echo "  <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>";
@@ -25,32 +27,44 @@
 
    echo "<div class=\"modal-body\">";
    echo "  <div class=\"row\">";
-   echo "    <div class=\"col-sm-6 col-md-7\">";
+   echo "    <div class=\"col-sm-6 col-md-4\">";
    echo "      <div class=\"thumbnail\">";
-   echo "        <img src=\"gallery/fish/".$row[10]."-".$row[13]."-".strtotime($row[4]).".jpg\" alt=\"ZAN-FIX-001\" />";
+   echo "        <img src=\"gallery/fish/".$row[13]."-".$row[16]."-".strtotime($row[4]).".jpg\" alt=\"ZAN-FIX-001\" />";
    echo "        <div class=\"caption\">";
    echo "          <div class=\"form-group\">";
-   echo "            <label for=\"catchSpecies\" class=\"control-label\">Species:</label> ".$row[9]."<br />";
-   echo "            <label for=\"catchLength\" class=\"control-label\">Length:</label> ".number_format($row[5]/10, 1, ',', '.')." cm<br />";
-   echo "            <label for=\"catchWeight\" class=\"control-label\">Weight:</label> ".number_format($row[6], 0, ',', '.')." g<br />";
-   echo "            <label for=\"catchWater\" class=\"control-label\">Water:</label> ".$row[12]."<br />";
+   echo "            <label for=\"catchSpecies\" class=\"control-label\">Species:</label> ".$row[12]."<br />";
+   echo "            <label for=\"catchLength\" class=\"control-label\">Length:</label> ".number_format($row[7]/10, 1, ',', '.')." cm<br />";
+   echo "            <label for=\"catchWeight\" class=\"control-label\">Weight:</label> ".number_format($row[8], 0, ',', '.')." g<br />";
+   echo "            <label for=\"catchWater\" class=\"control-label\">Water:</label> ".$row[15]."<br />";
    echo "            <label for=\"catchDate\" class=\"control-label\">Date:</label> ".date('d-m-Y H:m',strtotime($row[4]))."<br />";
-   echo "            <label for=\"catchMisc\" class=\"control-label\">Misc:</label> ".$row[7]."<br />";
+   echo "            <label for=\"catchMisc\" class=\"control-label\">Misc:</label> ".$row[9]."<br />";
    echo "          </div>";
    echo "        </div>";
    echo "      </div>";   
    echo "    </div>";   
-   echo "    <div class=\"col-sm-6 col-md-5\">";
+   echo "    <div class=\"col-sm-6 col-md-4\">";
    echo "      <div class=\"thumbnail\">";
-   echo "        <img src=\"gallery/bait/".$row[16]."".$row[19].".jpg\" alt=\"".$row[17]." ".$row[15]." ".$row[18]."\">";
+   echo "        <img src=\"gallery/bait/".$row[19]."".$row[22].".jpg\" alt=\"".$row[20]." ".$row[18]." ".$row[21]."\">";
    echo "        <div class=\"caption\">";
    echo "          <div class=\"form-group\">";
-   echo "            <label for=\"baitName\" class=\"control-label\">Name:</label> ".$row[15]."<br />";
-   echo "            <label for=\"baitProducer\" class=\"control-label\">Producer:</label> ".$row[17]."<br />";
-   echo "            <label for=\"baitColor\" class=\"control-label\">Color:</label> ".$row[18]."<br />";
-   echo "            <label for=\"baitLength\" class=\"control-label\">Length:</label> ".number_format($row[19]/10, 1, ',', '.')." cm<br />";
-   echo "            <label for=\"baitWeight\" class=\"control-label\">Weight:</label> ".number_format($row[20], 0, ',', '.')." g<br />";
-   echo "            <label for=\"baitMisc\" class=\"control-label\">Misc:</label> ".$row[21]."<br />";
+   echo "            <label for=\"baitName\" class=\"control-label\">Name:</label> ".$row[18]."<br />";
+   echo "            <label for=\"baitProducer\" class=\"control-label\">Producer:</label> ".$row[20]."<br />";
+   echo "            <label for=\"baitColor\" class=\"control-label\">Color:</label> ".$row[21]."<br />";
+   echo "            <label for=\"baitLength\" class=\"control-label\">Length:</label> ".number_format($row[22]/10, 1, ',', '.')." cm<br />";
+   echo "            <label for=\"baitWeight\" class=\"control-label\">Weight:</label> ".number_format($row[23], 0, ',', '.')." g<br />";
+   echo "            <label for=\"baitMisc\" class=\"control-label\">Misc:</label> ".$row[24]."<br />";
+   echo "            <label for=\"baitMisc\" class=\"control-label\">Catch-Detail:</label> ".$row[10]."<br />";
+   echo "          </div>";
+   echo "        </div>";
+   echo "      </div>";
+   echo "    </div>";   
+   echo "    <div class=\"col-sm-6 col-md-4\">";
+   echo "      <div class=\"thumbnail\">";
+   echo "        <img src=\"".$img."\" alt=\"\" />";
+   echo "        <div class=\"caption\">";
+   echo "          <div class=\"form-group\">";
+   echo "            <label for=\"locationLat\" class=\"control-label\">Latitude:</label> ".$row[5]."<br />";
+   echo "            <label for=\"locationLng\" class=\"control-label\">Longitude:</label> ".$row[6]."<br />";
    echo "          </div>";
    echo "        </div>";
    echo "      </div>";

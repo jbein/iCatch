@@ -31,25 +31,18 @@
    while($row = $res->fetch_row()){
       echo "<tr>";
       echo "  <td>".str_pad($i++, 3, 0, STR_PAD_LEFT)."</td>";
-      echo "  <td>".$row[9]."</td>";
-      echo "  <td>".number_format($row[5]/10, 1, ',', '.')." cm</td>";
-      echo "  <td>".number_format($row[6], 0, ',', '.')." g</td>";
       echo "  <td>".$row[12]."</td>";
+      echo "  <td>".number_format($row[7]/10, 1, ',', '.')." cm</td>";
+      echo "  <td>".number_format($row[8], 0, ',', '.')." g</td>";
+      echo "  <td>".$row[15]."</td>";
       echo "  <td>".date('d-m-Y H:m',strtotime($row[4]))."</td>";
       echo "  <td>";
       echo "    <a class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#modalCatchDetail\" data-cid=\"".$row[0]."\">";
       echo "      <span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span>";
       echo "    </a>";
       echo "  </td>";
-/*
-      echo "    <button type=\"button\" class=\"btn btn-default btn-sm\" data-toggle=\"modal\" data-target=\"#catchDetail\">";
-      echo "      <span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span>";
-      echo "    </button>";
-*/
       echo "</tr>";
    }
 ?> 
   </table>
 </div>
-
-

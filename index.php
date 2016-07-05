@@ -14,6 +14,9 @@
          case "list":
             require_once("php/list.php");
             break;
+         case "new":
+            require_once("php/newCatch.php");
+            break;
          case "about":
             require_once("html/about.html");
             break;
